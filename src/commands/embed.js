@@ -3,14 +3,14 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName("jdm")
-		.setDescription("get a random jdm post."),
+		.setName("tempo")
+		.setDescription("o tempo atual de uma cidade aleatória"),
 	async execute(interaction) {
         const embed = new MessageEmbed()
-        .setTitle(`Testing`)
+        .setTitle(`This is an embed.`)
         .setDescription(`This is the description`)
         .setTimestamp();
-        interaction.channel.send({ content: `String / Message to send`, embeds: [embed]});
+        interaction.channel.send({embeds: [embed]});
 	}
 }
  

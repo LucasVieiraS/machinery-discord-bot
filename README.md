@@ -1,5 +1,5 @@
 # Machinery ⚙️
-[![Link](https://img.shields.io/badge/perfil%20-%23323330.svg?&style=for-the-badge&logo=INVITE LINK&logoColor=black&color=F745B5)](https://github.com/LucasVieiraS/Machinery)
+[![Invite](https://img.shields.io/badge/badges%20-%23323330.svg?&style=for-the-badge&logo=Discord&logoColor=black&color=006DEC)](https://discord.com/api/oauth2/authorize?client_id=966855473154383904&permissions=8&scope=bot)
 ![Stars](https://img.shields.io/github/stars/LucasVieiraS/Machinery?style=for-the-badge)
 ## Automation
  - Quick-ban commands > bans mentioned user.

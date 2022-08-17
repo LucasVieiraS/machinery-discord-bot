@@ -8,8 +8,7 @@ module.exports = {
 	execute(client, commands) {
 		console.log("O bot está online.");
 
-		process.env.CURRENT_RUN += 1
-		client.user.setActivity(`dev run ${process.env.CURRENT_RUN}`, {
+		client.user.setActivity(`dev run 1`, {
 			type: "WATCHING"
 		  });
 		const CLIENT_ID = client.user.id;

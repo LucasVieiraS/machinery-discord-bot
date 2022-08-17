@@ -4,8 +4,8 @@ const GuildSettings = require("../models/GuildSettings");
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName("setarcanalbemvindo")
-		.setDescription("Seta o canal de bem-vindo.")
+		.setName("definircanalbemvindo")
+		.setDescription("Define o canal de bem-vindo.")
 		.addChannelOption(option => option
 			.setName("bem-vindo")
 			.setDescription("O canal a de bem-vindo")

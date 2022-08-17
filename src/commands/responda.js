@@ -10,9 +10,10 @@ function getRandomAnswer(){return answers[Math.floor(Math.random()*answers.lengt
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("responda")
-		.setDescription("peça para que o maquinário te responda com sim, não ou talvez."),
+		.setDescription("Peça para que o maquinário te responda."),
 	async execute(interaction) {
-                interaction.channel.send({content: getRandomAnswer()});
+		await interaction.reply(getRandomAnswer())
+        //interaction.channel.send({content: getRandomAnswer()});
 	}
 }
  

@@ -1,6 +1,6 @@
 require("dotenv").config();
 const fs = require("fs");
-const Database = require("./config/Database");
+const Database = require("./config/Database.ts"); //tsc bot.ts
 
 const db = new Database();
 db.connect();
@@ -16,7 +16,12 @@ const client = new Client({
 
 const commandFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 
-const commands : any[] = [];
+interface Commands {
+	//id: string;
+}
+
+const commands: Commands[] = [];      
+
 
 client.commands = new Collection();
 

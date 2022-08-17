@@ -2,10 +2,10 @@
   "name": "machinery",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "bot.ts",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon bot.js"
+    "dev": "nodemon bot.ts"
   },
   "keywords": [],
   "author": "",

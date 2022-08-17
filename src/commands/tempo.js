@@ -13,10 +13,11 @@ module.exports = {
 				.setRequired(true)
 		),
 	async execute(interaction) {
+                let lang = "pt_br"
                 let city = interaction.options.getString("cidade") || "New York";
                 await axios
                 .get(
-                    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHERTOKEN}`
+                    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=${lang}&appid=${process.env.WEATHERTOKEN}`
                 )
                 .then(response => {
                     let apiData = response;
@@ -27,13 +28,12 @@ module.exports = {
                     let wind = apiData.data.wind.speed;
                     let icon = apiData.data.weather[0].icon
                     let country = apiData.data.sys.country
-                    city = apiData.data.sys.city
+                    city = apiData.data.name
                     let pressure = apiData.data.main.pressure;
                     let cloudness = apiData.data.weather[0].description;
                     embed = new MessageEmbed()
                     .setColor('#0099ff')
                     .setTitle(`Está ${currentTemp}\u00B0 C em ${city} - ${country}`)
-                    .setThumbnail(icon)
                     .addFields(
                                     [
                                     {name: `Temperatura Máxima:`, value: `${maxTemp}\u00B0 C`},
@@ -44,6 +44,7 @@ module.exports = {
                                     {name: `Nebulosidade:`, value: `${cloudness}`}
                                     ]
                             )
+                    .setThumbnail(`http://openweathermap.org/img/w/${icon}.png`)
                     interaction.reply({embeds: [embed]});
                 }).catch(err => {
                     console.log(err);

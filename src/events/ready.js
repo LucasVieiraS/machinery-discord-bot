@@ -8,7 +8,7 @@ module.exports = {
 	execute(client, commands) {
 		console.log("O bot está online.");
 
-		client.user.setActivity(`dev run 1`, {
+		client.user.setActivity(`${client.guilds.cache.size} Servers`, {
 			type: "WATCHING"
 		  });
 		const CLIENT_ID = client.user.id;

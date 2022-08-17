@@ -1,11 +1,9 @@
 require("dotenv").config();
 const fs = require("fs");
-//const Database = require("./config/Database");
+const Database = require("./config/Database");
 
-/*const db = new Database();
-
+const db = new Database();
 db.connect();
-*/
 
 const { Client, Intents, Collection } = require("discord.js");
 const client = new Client({
@@ -18,13 +16,14 @@ const client = new Client({
 
 const commandFiles = fs.readdirSync("./src/commands").filter(file => file.endsWith(".js"));
 
-const commands = [];
+const commands : any[] = [];
 
 client.commands = new Collection();
 
 for (const file of commandFiles) {
 	const command = require(`./src/commands/${file}`);
-	commands.push(command.data.toJSON());
+	let convertedJSON = command.data.toJSON();
+	commands.push(convertedJSON);
 	client.commands.set(command.data.name, command);
 }
 

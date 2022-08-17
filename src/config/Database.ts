@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+		
+export class Database {
 
-class Database {
+	connection : any;
+
 	constructor() {
 		this.connection = null;
 	}
 
-	connect () {
+	connect() {
 		console.log('Conectando ao banco de dados.');
 
 		mongoose.connect(process.env.MONGO_URL, {

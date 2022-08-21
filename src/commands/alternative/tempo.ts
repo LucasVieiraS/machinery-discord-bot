@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
-const { MessageEmbed } = require('discord.js');
+import Discord from 'discord.js';
 const axios = require('axios');
 
 module.exports = {
@@ -31,19 +31,17 @@ module.exports = {
                     city = apiData.data.name
                     let pressure = apiData.data.main.pressure;
                     let cloudness = apiData.data.weather[0].description;
-                    embed = new MessageEmbed()
+                    let embed = new Discord.MessageEmbed()
                     .setColor('#0099ff')
                     .setTitle(`Está ${currentTemp}\u00B0 C em ${city} - ${country}`)
-                    .addFields(
-                                    [
-                                    {name: `Temperatura Máxima:`, value: `${maxTemp}\u00B0 C`},
-                                    {name: `Temperatura Mínima:`, value: `${minTemp}\u00B0 C`},
-                                    {name: `Umidade:`, value: `${humidity} %`},
-                                    {name: `Velocidade do Vento:`, value: `${wind} m/s`},
-                                    {name: `Pressão:`, value: `${pressure} hpa`},
-                                    {name: `Nebulosidade:`, value: `${cloudness}`}
-                                    ]
-                            )
+                    .addFields([
+                        {name: `Temperatura Máxima:`, value: `${maxTemp}\u00B0 C`},
+                        {name: `Temperatura Mínima:`, value: `${minTemp}\u00B0 C`},
+                        {name: `Umidade:`, value: `${humidity} %`},
+                        {name: `Velocidade do Vento:`, value: `${wind} m/s`},
+                        {name: `Pressão:`, value: `${pressure} hpa`},
+                        {name: `Nebulosidade:`, value: `${cloudness}`}
+                    ])
                     .setThumbnail(`http://openweathermap.org/img/w/${icon}.png`)
                     interaction.reply({embeds: [embed]});
                 }).catch(err => {

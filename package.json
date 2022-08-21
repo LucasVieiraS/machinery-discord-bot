@@ -4,8 +4,7 @@
   "description": "",
   "main": "bot.ts",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon bot.ts"
+    "start": "ts-node bot.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +18,8 @@
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.1",
     "fs": "^0.0.1-security",
-    "mongoose": "^6.3.1"
+    "mongoose": "^6.3.1",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -22,4 +22,9 @@
  - **Invert command** > inverts the colors of your profile picture.
  - **Flip command** > flips your profile picture.
 
-#### ⭐ Hopefully this bots gives you some guidance to reach your goals, built by [Lucas](https://github.com/LucasVieiraS)!
+#### ⭐ Hopefully this bots gives you some guidance to reach your goals, built by:
+<blockquote>
+ <a href = "https://github.com/lucasvieiras/machinery-discord-bot/graphs/contributors">
+   <img src = "https://contrib.rocks/image?repo=lucasvieiras/machinery-discord-bot"/>
+ </a>
+</blockquote>
